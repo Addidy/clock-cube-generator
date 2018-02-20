@@ -15,7 +15,7 @@ public class UITransition : MonoBehaviour {
     }
 
     public void EnterSequenceEnd() {                    //Called by the end of the transitionenter animation, The idea is to start scene operations only when the animation has finished)
-        BroadcastMessage("EnterSequenceFinished");          //all children with "EnterSequenceFinished" functions will start their operations
+        CustomUtils.BroadcastAll("EnterSequenceFinished");  //all children with "EnterSequenceFinished" functions will start their operations
     }
 
     public void nextSceneOpen() {
