@@ -4,17 +4,18 @@ using System;
 
 public class Clock : MonoBehaviour {
 
-    public DateTime time;
+    public static String time;
     private Text text;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         text = GetComponent<Text>();
-	}
+        time = DateTime.UtcNow.ToString("HH:mm:ss");
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        time = DateTime.UtcNow;
-        text.text = time.ToString("HH:mm:ss");
+        time = DateTime.UtcNow.ToString("HH:mm:ss");
+        text.text = time;
 	}
 }
